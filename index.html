@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            
+            
+        }
+        .code-area{
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            border-right: 1px solid #555;
+        }
+        .code-area textarea{
+            resize: none;
+            width: 100%;
+            height: 33.33%;
+            font-size: 18px;
+            padding: 10px;
+            background: black;
+            color: rgb(14, 224, 14);
+            
+        }
+        .preview-area{
+            width: 50%;
+        }
+        .preview-area iframe{
+            width: 100%;
+            height: 100%;
+            border: none;
+            
+        }
+
+
+        @media screen and (max-width:360px){
+            #css{
+              display: none;
+
+          }
+          #js{
+              display: none;
+          }
+        body{
+          height: 100vh;
+          display: flex;
+          flex-direction: column; 
+      }
+      .code-area textarea{
+          
+          width: 100vh;
+          height: 50vh;
+          font-size: 15px;
+      
+      }
+      .preview-area{
+          width: 100vh;
+          height: 50vh;
+      }
+       
+      }
+
+   
+
+        @media screen and (max-width:512px){
+          #css{
+              display: none;
+
+          }
+          #js{
+              display: none;
+          }
+          body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column; 
+        }
+        .code-area textarea{
+            
+            width: 100vh;
+            height: 50vh;
+            font-size: 15px;
+        
+        }
+        .preview-area{
+            width: 100vh;
+            height: 50vh;
+        }
+         
+        }
+
+      
+
+
+
+      
+
+    </style>
+</head>
+<body>
+    <div class="code-area">
+        <textarea  id="html" placeholder="html code" oninput="showPreview()" ></textarea>
+        <textarea  id="css" placeholder="css code" oninput="showPreview()"></textarea>
+        <textarea  id="js" placeholder="js code" oninput="showPreview()"></textarea>
+
+    </div>
+
+    <div class="preview-area">
+        <iframe id="preview-window"></iframe>
+    </div>
+
+    <script>
+        function showPreview(){
+            var htmlCode = document.getElementById('html').value;
+            var cssCode = "<style>" + document.getElementById('css').value + "</style>";
+            var jsCode = "<scri"+"pt>" + document.getElementById('js').value + "</scri "+"pt>";
+            var frame = document.getElementById('preview-window').contentWindow.document;
+
+            frame.open();
+            frame.write(htmlCode+cssCode+jsCode);
+            frame.close();
+
+        }
+    </script>
+</body>
+</html>
