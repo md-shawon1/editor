@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,shrink-to-fit=no">
     <title>Document</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style>
         *{
             margin: 0;padding: 0;box-sizing: border-box;
@@ -108,9 +109,9 @@
 </head>
 <body>
     <div class="code-area">
-        <textarea  id="html" placeholder="html code" oninput="showPreview()" ></textarea>
-        <textarea  id="css" placeholder="css code" oninput="showPreview()"></textarea>
-        <textarea  id="js" placeholder="js code" oninput="showPreview()"></textarea>
+        <textarea  id="html" placeholder="write html code" oninput="showPreview()" ></textarea>
+        <textarea  id="css" placeholder="write css code" oninput="showPreview()"></textarea>
+        <textarea  id="js" placeholder="write js code" oninput="showPreview()"></textarea>
 
     </div>
 
@@ -130,6 +131,92 @@
             frame.close();
 
         }
+
+        swal({
+            title: 'hello',
+            text:'are you kazi tasnim ferdous vaiya?',
+            icon:'info',
+            buttons:['No','Yes'],
+            dangerMode:true
+        }).then((value)=>{
+            if(value == true){
+                swal({
+                    title: 'hello vaiya',
+                    text: "are you in a relationship?",
+                    icon:'info',
+                    buttons:['No','definitely'],
+                    
+                    dangerMode:true
+
+                }).then((valueOne)=>{
+                  function exLoop(){
+                     swal({
+                    title: 'hello vaiya',
+                    text: "Thank you for admitting the truth",
+                    icon:'success',
+                    buttons:'Welcome Omar',
+                    dangerMode:true
+                     })
+                  }
+                //   function underLoop(){
+                   
+                //     swal({
+                //     title: 'hello vaiya',
+                //     text: "You are lying. am i right?",
+                //     icon:'error',
+                //     buttons:['No','Yes, i lied'],
+                   
+                //     dangerMode:true
+                //      })
+                    
+                //   }
+
+                  if(valueOne == true){
+                      exLoop();
+                  }else{
+                    swal({
+                    title: 'hello vaiya',
+                    text: "You are lying. am i right?",
+                    icon:'error',
+                    buttons:['No','Yes, i lied'],
+                   
+                    dangerMode:true
+                     }).then((valueTwo)=>{
+                        if(valueTwo == true){
+                            swal({
+                    title: 'hello vaiya',
+                    text: "Thank you for admitting the truth",
+                    icon:'success',
+                    buttons:'Welcome Omar',
+                    dangerMode:true
+                     })
+                  }else{
+                    swal({
+                    title: ' vaiya',
+                    text: "You are lying again. I am disappointed. your lie wins",
+                    icon:'error',
+                    buttons:'Yes',
+                   
+                    dangerMode:true
+                     })
+                  }
+                     })
+                     
+                  }
+
+                })
+            }else{
+                swal({
+                    title: 'hello mahmuda',
+                    text: "I know you are single",
+                    icon:'success',
+                    // buttons:['No','Yes, I am'],
+                    buttons:['No','Yes, I am'],
+                    dangerMode:true
+
+                })
+            }
+        })
     </script>
 </body>
 </html>
